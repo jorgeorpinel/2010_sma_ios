@@ -5,7 +5,7 @@ Modified in 2016 to work on modern browsers (as a demo).
 
 # Shelton & Mindel Associates (Deprecated)
 For MINDJOG/ [Shelton Mindel](http://sheltonmindel.com)
-&copy; 2010 [Jorge Orpinel](http://jorge.orpinel.com)
+&copy; 2011 [Jorge Orpinel](http://jorge.orpinel.com)
 **Version 1.0.1**
 
 ## Requires
