@@ -58,7 +58,7 @@ img { border:none; }
 }
 
 .menualign { display: table-cell;
-	position:relative; left: 792px;
+	position:relative; /* left: 792px; */
 	width: 184px; height: 100%;
 	text-align:center; vertical-align: middle;
 }
@@ -77,7 +77,7 @@ img { border:none; }
 }
 
 .tabRalign { display: table-cell;
-	position:relative; left: 955px; z-index:10;
+	position:relative; /* left: 955px; */ z-index:10;
 	background-color: #fff;
 	width: 23px; height: 100%;
 	text-align:center; vertical-align: middle;

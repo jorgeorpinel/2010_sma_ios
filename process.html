@@ -20,7 +20,7 @@ var animating = false;
 
 $(document).ready(function() {
   menuVisible = ($('#centermenu').css('display') == 'table');
-  
+
   $("#menuRtab").click(function () { if(animating) return; animating = true;
     if(menuVisible) // slide out:
       $('#centermenu').animate({left:978}, {duration:2000, complete:function() {
@@ -37,7 +37,7 @@ $(document).ready(function() {
       }});
       }
   });
-  
+
   myScroll = new iScroll('scroller');
 });
 </script>
@@ -61,7 +61,7 @@ a {
 }
 -->
 </style>
-					
+
 </head>
 <body>
 <div id="container" style="overflow: hidden;">
@@ -78,22 +78,22 @@ a {
 
   <div id="center">
     <div id="valign">
-    
+
       <div id="infoText" class="process">
-      
+
                      <div id="wrapper"><div id="scroller">
           <div id="processText" class="SMAtext">
 
 						<p><span class="coloredText">The firm's design process is tripartite!</span></p>
-						<p><span class="coloredText">The Project Genesis</span> phase is dedicated to gathering and absorbing information from all the varied sources available.  The client provides information about images, use patterns and budget parameters.  The "client" is rarely just one person and considerable effort is expended on identifying a harmonious set of priorities.  The physical environment provides information about context, space and forms.  The unique attributes of the existing conditions are identified and those deemed desirable are noted for enhancement.  All information is then distilled and finally formulated into a "parti" or concept.  The fewer the number of words it takes to describe the concept the better.</p> 
+						<p><span class="coloredText">The Project Genesis</span> phase is dedicated to gathering and absorbing information from all the varied sources available.  The client provides information about images, use patterns and budget parameters.  The "client" is rarely just one person and considerable effort is expended on identifying a harmonious set of priorities.  The physical environment provides information about context, space and forms.  The unique attributes of the existing conditions are identified and those deemed desirable are noted for enhancement.  All information is then distilled and finally formulated into a "parti" or concept.  The fewer the number of words it takes to describe the concept the better.</p>
 						<p><span class="coloredText">The Architectonics</span> phase establishes a physical reality for the"parti."  Rules of design are constructed to protect the integrity of the concept.  All design decisions, from overall planning  to lighting, millwork details, finishes, furnishings, and even accessories, are checked against these rules.  Design choices that detract from the "parti" are rejected.  At the detail level, the design process explores the materials and mediums employed, respecting their own characteristics.  The design of a rug reflects how it is made, not just a pattern applied to it.  A bulb in a fixture looks like a part of it, not just attached to it.  Many of the firmπs custom designs are now commercially available because of a unified attention to detail and its contribution to the whole.</p>
 						<p><span class="coloredText">The Execution</span> phase establishes the massive organization and comprehensive documentation necessary to achieve all of the above.  The goal is simple.  The reality is complex and relies on dedication to thoroughness, constant monitoring and clear communication for effective results. </p>
 
           </div> <!-- //philosophyText -->
 	      </div></div> <!-- //wrapper -->
-      
+
       </div>
-      
+
     </div>
   </div>
 
@@ -105,7 +105,7 @@ a {
 
   <!--MAIN MENU -->
   <div style="display: none; left: 978px;" id="centermenu">
-    <div class="menualign" style="right: -184px;">
+    <div class="menualign">
       <div id="menu">
         <div id="projects" class="menuitem"><a href="projects.html" target="_self"><img src="UI/PROJECTS.gif" alt="PROJECTS" height="28" width="146"/></a></div>
         <div id="products" class="menuitem"><a href="products.html" target="_self"><img src="UI/PRODUCTS.gif" alt="PRODUCTS" height="28" width="146"/></a></div>
@@ -123,7 +123,7 @@ a {
 
   <!--RIGHT TAB -->
   <div id="centerRtab">
-    <div class="tabRalign">       
+    <div class="tabRalign">
       <div id="menuRtab"><img src="UI/rightTAB-menu.gif" alt="menu tab" height="172" width="23"/></div>
     </div>
   </div>

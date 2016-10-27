@@ -18,13 +18,13 @@
 	position:relative;
 	top: 0px;
 	width: 700px;
-	height: 450px;
+	/*height: 450px;*/
 	text-align:center;
 	vertical-align:middle;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 0px;
-	
+
 	overflow: visible;
 	visibility: visible;
 }
@@ -38,7 +38,7 @@
 .philosophy {
 	background: url('../BGs/philosophyBG.jpg') no-repeat;
 }
-	
+
 
 #wrapper {
   position:relative; top: 0px; left: 0px;/* z-index:1;*/
@@ -61,7 +61,7 @@
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 14px;
 	font-style: normal;
-	
+
 }
 
 .SMAtext a {
