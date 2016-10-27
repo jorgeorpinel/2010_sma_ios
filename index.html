@@ -19,13 +19,19 @@ $(document).ready(function() {
     if(display == 'table') $('#menuRtab').children().first().attr('src', 'UI/rightTAB-hide.gif');
     else if(display == 'none') $('#menuRtab').children().first().attr('src', 'UI/rightTAB-menu.gif');
   }); });
-	
+
   $('#slide').cycle(); // start slideshow
 });
 </script>
 
 </head>
 <body>
+
+  <div style="position:absolute; top: 100px; width:100%; text-align:center; z-index:999;">
+    <b style="color:black">This website is an outdated demo</b><br/>
+    See <a href="https://github.com/jorgeorpinel/2011_sma_ios">my GH repo</a>.
+  </div>
+
 <div id="container">
   <div id="logo">
     <img src="UI/SMAlogo.gif" alt="Shelton, Mindel &amp; Associates" height="80" width="600"/></div>
@@ -85,7 +91,7 @@ $(document).ready(function() {
 
   <!--RIGHT TAB -->
   <div id="centerRtab">
-    <div class="tabRalign">       
+    <div class="tabRalign">
       <div id="menuRtab"><img src="UI/rightTAB-menu.gif" alt="menu tab" height="172" width="23"/></div>
     </div>
   </div>

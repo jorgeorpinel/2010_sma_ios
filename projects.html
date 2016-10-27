@@ -4,127 +4,68 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<title>Shelton, Mindel &amp; Associates</title>
+<link rel="stylesheet"  href="css/interface.css"/>
+<link rel="stylesheet"  href="css/index.css"/>
 
-  <link rel="stylesheet" href="coda-slider-2/stylesheets/coda-slider-mon20.css" type="text/css" media="screen" />
-  <link rel="stylesheet" href="coda-slider-2/stylesheets/reset.css" type="text/css" media="screen" />
+<title>Shelton Mindel &amp; Associates</title>
 
-<link href="css/interface.css" rel="stylesheet" type="text/css" />
-<link href="css/projects.css" rel="stylesheet" type="text/css" />
-
-<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.cycle.min.2.8.8.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-  $("#menuRtab").click(function () { $('#centermenu').toggle("slide", { direction: "right"}, 2000, function() {
+  $("#menuRtab").click(function () { $("#centermenu").toggle("slide", { direction: "right"}, 2000, function() {
     display = $(this).css('display');
-    if(display == 'table') $('#menuRtab').children().attr('src', 'UI/rightTAB-hide.gif');
-    else if(display == 'none') $('#menuRtab').children().attr('src', 'UI/rightTAB-menu.gif');
+    if(display == 'table') $('#menuRtab').children().first().attr('src', 'UI/rightTAB-hide.gif');
+    else if(display == 'none') $('#menuRtab').children().first().attr('src', 'UI/rightTAB-menu.gif');
   }); });
+
+  $('#slide').cycle(); // start slideshow
 });
 </script>
 
-  <!-- Begin coda-slider-2 -->
-  <script type="text/javascript" src="coda-slider-2/javascripts/jquery.easing.1.3.js"></script>
-  <script type="text/javascript" src="coda-slider-2/javascripts/jquery.coda-slider-2.0.js"></script>
-  <script type="text/javascript">
-  $().ready(function() {
-    $('#coda-slider-1').codaSlider();
-  });
-  </script>
-  <!-- End coda-slider-2 -->
 </head>
 <body>
 
-<div id="container">
-
-  <!-- LOGO -->
-  <div id="logo" class="project">
-    <a href="index.html"><img src="UI/SMAlogo.gif" width="600" height="80" alt="Shelton, Mindel &amp; Associates" /></a>
+  <div style="position:absolute; top: 100px; width:100%; text-align:center; z-index:999;">
+    <b style="color:black">This website is an outdated demo</b><br/>
+    See <a href="https://github.com/jorgeorpinel/2011_sma_ios">my GH repo</a>.
   </div>
 
-  <!-- LEFT TAB -->
-  <div id="centerLtab">
-    <div class="tabLalign">
-      <div id="menuLtab"><a href="#"><img src="UI/leftTAB.gif" width="23" height="172" alt="menu tab" /></a></div>
+<div id="container">
+  <div id="logo">
+    <img src="UI/SMAlogo.gif" alt="Shelton, Mindel &amp; Associates" height="80" width="600"/></div>
+
+    <!-- LEFT TAB -->
+    <div id="centerLtab">
+      <div class="tabLalign">
+        <div id="menuLtab"><img src="UI/leftTAB.gif" alt="menu tab" height="172" width="23"/></div>
+      </div>
+    </div>
+    <!--END  LEFT TAB -->
+
+  <div id="center">
+    <div id="valign">
+      <div id="slide">
+        <div><a href="PROJECTS/PROJECT18/project.html"><img src="SlideshowImages/slide1.jpg"  width="" height="298" align="middle" /></a></div>
+        <div><a href="PROJECTS/PROJECT16/project.html"><img src="SlideshowImages/slide2.jpg"  width="" height="298" align="middle" /></a></div>
+        <div><a href="products.html"><img src="SlideshowImages/slide3.jpg"  width="" height="298" align="middle" /></a></div>
+        <div><a href="PROJECTS/PROJECT15/project.html"><img src="SlideshowImages/slide4.jpg"  width="" height="298" align="middle" /></a></div>
+        <div><a href="PROJECTS/PROJECT21/project.html"><img src="SlideshowImages/slide5.jpg"  width="" height="298" align="middle" /></a></div>
+        <div><a href="PROJECTS/PROJECT01/project.html"><img src="SlideshowImages/slide6.jpg"  width="" height="298" align="middle" /></a></div>
+        <div><a href="PROJECTS/PROJECT04/project.html"><img src="SlideshowImages/slide7.jpg"  width="" height="298" align="middle" /></a></div>
+        <div><a href="PROJECTS/PROJECT20/project.html"><img src="SlideshowImages/slide8.jpg"  width="" height="298" align="middle" /></a></div>
+        <div><a href="PROJECTS/PROJECT01/project.html"><img src="SlideshowImages/slide9.jpg"  width="" height="298" align="middle" /></a></div>
+        <div><a href="PROJECTS/PROJECT35/project.html"><img src="SlideshowImages/slide10.jpg" width="" height="298" align="middle" /></a></div>
+        <div><a href="PROJECTS/PROJECT11/project.html"><img src="SlideshowImages/slide11.jpg" width="" height="298" align="middle" /></a></div>
+        <div><a href="PROJECTS/PROJECT17/project.html"><img src="SlideshowImages/slide12.jpg" width="" height="298" align="middle" /></a></div>
+        <div><a href="PROJECTS/PROJECT26/project.html"><img src="SlideshowImages/slide13.jpg" width="" height="298" align="middle" /></a></div>
+        <div><a href="products.html"><img src="SlideshowImages/slide14.jpg" width="" height="298" align="middle" /></a></div>
+        <div><a href="PROJECTS/PROJECT09/project.html"><img src="SlideshowImages/slide15.jpg" width="" height="298" align="middle" /></a></div>
+        <div><a href="PROJECTS/PROJECT13/project.html"><img src="SlideshowImages/slide16.jpg" width="" height="298" align="middle" /></a></div>
+      </div>
     </div>
   </div>
-  <!--END  LEFT TAB -->
-
-  <!--PROJECTS MENU -->
-  <div id="centermenustrip">
-    <div id="menuValign">
-      <div id="menustrip">
-        <div class="coda-slider-wrapper">
-          <div class="coda-slider preload" id="coda-slider-1">
-            <div class="panel">
-              <div class="panel-wrapper">
-  <ul>
-    <li><a href="PROJECTS/PROJECT0310/project.html"><img src="coda-slider-2/images/thumb0310.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT0311/project.html"><img src="coda-slider-2/images/thumb0311.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT56LeonardSt/project.html"><img src="coda-slider-2/images/thumb56LeonardSt.png" /></a></li>
-    <li><a href="PROJECTS/PROJECTPoloHQ/project.html"><img src="coda-slider-2/images/thumbPoloHQ.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT4806/project.html"><img src="coda-slider-2/images/thumb4806.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT0804/project.html"><img src="coda-slider-2/images/thumb0804.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT0409/project.html"><img src="coda-slider-2/images/thumb0409.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT3502/project.html"><img src="coda-slider-2/images/thumb3502.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT0510/project.html"><img src="coda-slider-2/images/thumb0510.png" /></a></li>
-    <li><a href="PROJECTS/PROJECTStingLondon/project.html"><img src="coda-slider-2/images/thumbStingLondon.png" /></a></li>
-  </ul>
-              </div>
-            </div>
-            <div class="panel">
-              <div class="panel-wrapper">
-  <ul>
-    <li><a href="PROJECTS/PROJECTFilaHQ/project.html"><img src="coda-slider-2/images/thumbFilaHQ.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT2990/project.html"><img src="coda-slider-2/images/thumb2990.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT5504/project.html"><img src="coda-slider-2/images/thumb5504.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT3509/project.html"><img src="coda-slider-2/images/thumb3509.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT3510/project.html"><img src="coda-slider-2/images/thumb3510.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT4096/project.html"><img src="coda-slider-2/images/thumb4096.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT0669/project.html"><img src="coda-slider-2/images/thumb0669.png" /></a></li>
-    <li><a href="PROJECTS/PROJECTCelebrityCruises/project.html"><img src="coda-slider-2/images/thumbCelebrityCruises.png" /></a></li>
-    <li><a href="PROJECTS/PROJECTLoft3514/project.html"><img src="coda-slider-2/images/thumbLoft3514.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT2209/project.html"><img src="coda-slider-2/images/thumb2209.png" /></a></li>
-  </ul>
-              </div>
-            </div>
-            <div class="panel">
-              <div class="panel-wrapper">
-  <ul>
-    <li><a href="PROJECTS/PROJECTBlackman/project.html"><img src="coda-slider-2/images/thumbBlackman.png" /></a></li>
-    <li><a href="PROJECTS/PROJECTPrivateJet0559/project.html"><img src="coda-slider-2/images/thumbPrivateJet0559.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT2750/project.html"><img src="coda-slider-2/images/thumb2750.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT2852/project.html"><img src="coda-slider-2/images/thumb2852.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT1330/project.html"><img src="coda-slider-2/images/thumb1330.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT0506/project.html"><img src="coda-slider-2/images/thumb0506.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT3625/project.html"><img src="coda-slider-2/images/thumb3625.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT1350/project.html"><img src="coda-slider-2/images/thumb1350.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT3107/project.html"><img src="coda-slider-2/images/thumb3107.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT3109/project.html"><img src="coda-slider-2/images/thumb3109.png" /></a></li>
-  </ul>
-              </div>
-            </div>
-            <div class="panel">
-              <div class="panel-wrapper">
-  <ul>
-    <li><a href="PROJECTS/PROJECTMichaelsPub/project.html"><img src="coda-slider-2/images/thumbMichaelsPub.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT2309/project.html"><img src="coda-slider-2/images/thumb2309.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT0410/project.html"><img src="coda-slider-2/images/thumb0410.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT0759/project.html"><img src="coda-slider-2/images/thumb0759.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT3259/project.html"><img src="coda-slider-2/images/thumb3259.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT0459/project.html"><img src="coda-slider-2/images/thumb0459.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT0118/project.html"><img src="coda-slider-2/images/thumb0118.png" /></a></li>
-    <li><a href="PROJECTS/PROJECT1850/project.html"><img src="coda-slider-2/images/thumb1850.png" /></a></li>
-  </ul>
-              </div>
-            </div>
-          </div>  <!-- .coda-slider -->
-        </div>  <!-- .coda-slider-wrapper -->
-      </div>  <!-- //menustrip  -->
-    </div> <!-- //menuValign  -->
-  </div> <!-- //centermenustrip  -->
-  <!--END PROJECTS MENU -->
 
 <div id="centerPimage"><div id="verticalAlign"><div id="projectUI">
   <div id="credits"><a href="credits.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
@@ -134,29 +75,28 @@ $(document).ready(function() {
   <div style="display: none;" id="centermenu">
     <div class="menualign">
       <div id="menu">
-        <div id="projects" class="menuitem"><a href="projects.html" target="_self"><img src="UI/PROJECTSy.gif" width="146" height="28" alt="PROJECTS" /></a></div>
-        <div id="products" class="menuitem"><a href="products.html" target="_self"><img src="UI/PRODUCTS.gif" width="146" height="28" alt="PRODUCTS" /></a></div>
-        <div id="profile" class="menuitem"><a href="profile.html" target="_self"><img src="UI/PROFILE.gif" width="146" height="28" alt="PROFILE" /></a></div>
-        <div id="philosophy" class="menuitem"><a href="philosophy.html" target="_self"><img src="UI/PHILOSOPHY.gif" width="146" height="28" alt="PHILOSOPHY" /></a></div>
-        <div id="process" class="menuitem"><a href="process.html" target="_self"><img src="UI/PROCESS.gif" width="146" height="28" alt="PROCESS" /></a></div>
-        <div id="awards" class="menuitem"><a href="awards.html" target="_self"><img src="UI/AWARDS.gif" width="146" height="28" alt="AWARDS" /></a></div>
-        <div id="periodicals" class="menuitem"><a href="periodicals.html" target="_self"><img src="UI/PERIODICALS.gif" width="146" height="28" alt="PERIODICALS" /></a></div>
-        <div id="books" class="menuitem"><a href="books.html" target="_self"><img src="UI/BOOKS.gif" width="146" height="28" alt="BOOKS" /></a></div>
-        <div id="contact" class="menuitem"><a href="contact.html" target="_self"><img src="UI/CONTACT.gif" width="146" height="28" alt="CONTACT" /></a></div>
-      </div>  <!-- //menu  -->
-    </div>  <!-- //menualign  -->
-  </div> <!-- //centermenu  -->
+        <div id="projects" class="menuitem"><a href="projects.html" target="_self"><img src="UI/PROJECTS.gif" alt="PROJECTS" height="28" width="146"/></a></div>
+        <div id="products" class="menuitem"><a href="products.html" target="_self"><img src="UI/PRODUCTS.gif" alt="PRODUCTS" height="28" width="146"/></a></div>
+        <div id="profile" class="menuitem"><a href="profile.html" target="_self"><img src="UI/PROFILE.gif" alt="PROFILE" height="28" width="146"/></a></div>
+        <div id="philosophy" class="menuitem"><a href="philosophy.html" target="_self"><img src="UI/PHILOSOPHY.gif" alt="PHILOSOPHY" height="28" width="146"/></a></div>
+        <div id="process" class="menuitem"><a href="process.html" target="_self"><img src="UI/PROCESS.gif" alt="PROCESS" height="28" width="146"/></a></div>
+        <div id="awards" class="menuitem"><a href="awards.html" target="_self"><img src="UI/AWARDS.gif" alt="AWARDS" height="28" width="146"/></a></div>
+        <div id="periodicals" class="menuitem"><a href="periodicals.html" target="_self"><img src="UI/PERIODICALS.gif" alt="PERIODICALS" height="28" width="146"/></a></div>
+        <div id="books" class="menuitem"><a href="books.html" target="_self"><img src="UI/BOOKS.gif" alt="BOOKS" height="28" width="146"/></a></div>
+        <div id="contact" class="menuitem"><a href="contact.html" target="_self"><img src="UI/CONTACT.gif" alt="CONTACT" height="28" width="146"/></a></div>
+      </div>
+    </div>
+  </div>
   <!--END MAIN MENU -->
 
   <!--RIGHT TAB -->
   <div id="centerRtab">
     <div class="tabRalign">
-      <div id="menuRtab"><img src="UI/rightTAB-menu.gif" width="23" height="172" alt="  menu tab" /></div>
+      <div id="menuRtab"><img src="UI/rightTAB-menu.gif" alt="menu tab" height="172" width="23"/></div>
     </div>
   </div>
   <!--END RIGHT TAB -->
 
-</div>  <!-- //container  -->
-
+</div>
 </body>
 </html>

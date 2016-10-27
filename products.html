@@ -41,20 +41,20 @@ function loaded() {
     $('#furniture').cycle(options={ timeout:4000, speed:2000});
     $('#textiles').cycle(options={ timeout:1500, speed:500});
     $('#plumbing').cycle(options={ timeout:2000, speed:2000});
-    
+
     // on thumb click:
     $('.prod_thumb').click(function() { // pause slideshows & register links:
       $('#lighting, #furniture, #textiles, #plumbing').cycle('pause');
       type = $(this).parent().parent().attr('id');
-      
+
       // add caption: //xxx: this is hardcoded..
       switch(type) {
-        case 'lighting':
-          $('#imglink').attr('href', 'http://www.nessenlighting.com/results3.php?designer=Shelton%2C+Mindel+%26+Associates')
-            .text('Nessen Lighting');
-          $('#imglink2').attr('href', 'http://www.nessenlighting.com/results3.php?designer=Shelton%2C+Mindel+%26+Associates')
-            .text('see it on www.nessenlighting.com');
-          break;
+        // case 'lighting':
+        //   $('#imglink').attr('href', 'http://www.nessenlighting.com/results3.php?designer=Shelton%2C+Mindel+%26+Associates')
+        //     .text('Nessen Lighting');
+        //   $('#imglink2').attr('href', 'http://www.nessenlighting.com/results3.php?designer=Shelton%2C+Mindel+%26+Associates')
+        //     .text('see it on www.nessenlighting.com');
+        //   break;
         case 'furniture':
           $('#imglink').attr('href', 'http://www.knoll.com/designer/designer_detail.jsp?designer_id=154')
             .text('Knoll');
@@ -78,7 +78,7 @@ function loaded() {
             .text('see it on www.waterworks.com');
           break;
       }
-      
+
       productItem = $('#i'+type);
       if($('#pmenu').css('display') == 'none') $('#menuLtab').click();
       productItem.toggleClass('i'+type[0]+'y'); // turn on product type menu item highlight
@@ -106,15 +106,15 @@ $(document).ready(function() {
     });
   });
 
-  // get (ajax) slideshows images:
-  $.get('productMENU/slide.php', {prod_dir: "LIGHTINGc"}, function(data){
-    $('#lighting').append(data); $('#lighting').show(); loaded(); });
-  $.get('productMENU/slide.php', {prod_dir: "FURNITUREc"}, function(data){
-    $('#furniture').append(data); $('#furniture').show(); loaded(); });
-  $.get('productMENU/slide.php', {prod_dir: "TEXTILESc"}, function(data){
-    $('#textiles').append(data); $('#textiles').show(); loaded(); });
-  $.get('productMENU/slide.php', {prod_dir: "PLUMBINGc"}, function(data){
-    $('#plumbing').append(data); $('#plumbing').show(); loaded(); });
+  // // get (ajax) slideshows images:
+  // $.get('productMENU/slide.php', {prod_dir: "LIGHTINGc"}, function(data){
+  //   $('#lighting').append(data); $('#lighting').show(); loaded(); });
+  // $.get('productMENU/slide.php', {prod_dir: "FURNITUREc"}, function(data){
+  //   $('#furniture').append(data); $('#furniture').show(); loaded(); });
+  // $.get('productMENU/slide.php', {prod_dir: "TEXTILESc"}, function(data){
+  //   $('#textiles').append(data); $('#textiles').show(); loaded(); });
+  // $.get('productMENU/slide.php', {prod_dir: "PLUMBINGc"}, function(data){
+  //   $('#plumbing').append(data); $('#plumbing').show(); loaded(); });
 
   // register slideshows resuming:
   $('#slider-wrapper,#caption').click(function() {
@@ -147,7 +147,7 @@ $(document).ready(function() {
     if(currentPanel.equals(parent.children().first())) currentPanel = parent.children().last();
     else currentPanel = currentPanel.prev();
     $('#slider-wrapper').scrollTo(currentPanel, 800);
-    
+
     if (productItem.attr('id') != 'iplumbing') return; // rethink plumbing caption:
     alt = currentPanel.children().children().attr('alt');
     imgNo = parseInt(alt.substring(alt.length-2),10);
@@ -164,7 +164,7 @@ $(document).ready(function() {
     if(currentPanel.equals(parent.children().last())) currentPanel = parent.children().first();
     else currentPanel = currentPanel.next();
     $('#slider-wrapper').scrollTo(currentPanel, 800);
-    
+
     if (productItem.attr('id') != 'iplumbing') return; // rethink plumbing caption:
     alt = currentPanel.children().children().attr('alt');
     imgNo = parseInt(alt.substring(alt.length-2),10);
@@ -176,7 +176,7 @@ $(document).ready(function() {
                                 + (imgNo<8?'25/203':'opus/269') )
       .text('see it on www.waterworks.com');
   });
-  
+
 });
 </script>
 
@@ -208,17 +208,19 @@ $(document).ready(function() {
       </div>
     </div>
   </div>
-  <!--END PRODUCTS MENU --> 
+  <!--END PRODUCTS MENU -->
 
   <!--PRODUCTS Slideshows -->
   <div id="centerContainer">  <!-- absolute pos -->
     <div id="valignContainer">  <!-- relative -->
       <div id="productContainer"> <!-- rel -->
-        
+
+        <p style="text-align:center">Sorry. This web page is no longer operational.</p>
+
         <!-- absolutes: -->
         <div style="display: none;" id="lighting" class="products"></div>
         <div style="display: none;" id="furniture" class="products"></div>
-        <div style="display: none;" id="textiles" class="products"></div> 
+        <div style="display: none;" id="textiles" class="products"></div>
         <div style="display: none;" id="plumbing" class="products"></div>
 
         <div style="display: none;" id="fader"></div> <!-- abs, z 901-->
@@ -301,7 +303,7 @@ $(document).ready(function() {
           </div>
         </div>
         <!-- //slider -->
-        
+
         <div style="display: none;" id="back" class="arrow"></div>
         <div style="display: none;" id="fwd" class="arrow"></div>
 
@@ -311,7 +313,7 @@ $(document).ready(function() {
       </div>
     </div>
   </div>
-  <!--END PRODUCTS Slideshows --> 
+  <!--END PRODUCTS Slideshows -->
 
 <div id="centerPimage"><div id="verticalAlign"><div id="projectUI">
   <div id="credits"><a href="credits.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
@@ -337,7 +339,7 @@ $(document).ready(function() {
 
   <!--RIGHT TAB -->
   <div id="centerRtab">
-    <div class="tabRalign">       
+    <div class="tabRalign">
       <div id="menuRtab"><img src="UI/rightTAB-menu.gif" alt="menu tab" height="172" width="23"/></div>
     </div>
   </div>
