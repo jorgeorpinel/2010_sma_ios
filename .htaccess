@@ -1,0 +1,12 @@
+RewriteEngine on
+#force www
+RewriteCond %{HTTP_HOST} ^sheltonmindel.com [NC]
+RewriteRule ^(.*)$ http://www.sheltonmindel.com/$1 [L,R=301]
+#redirect iOS users
+RewriteCond %{HTTP_USER_AGENT} ^.*(iPad|iPhone|iPod).*$
+RewriteCond %{REQUEST_URI} !^/SMAiPAD
+RewriteRule ^(.*)$ http://www.sheltonmindel.com/SMAiPAD [R=301]
+#redirect the rest of users (target: PCs)
+RewriteCond %{HTTP_USER_AGENT} !^.*(iPad|iPhone|iPod).*$
+RewriteCond %{REQUEST_URI} ^/SMAiPAD
+RewriteRule ^(.*)$ http://www.sheltonmindel.com/ [R=301]

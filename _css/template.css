@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#center { display: table;
+  position:absolute; top: 0px; left: 255px;/* z-index: 8;*/
+  width: 468px; height: 100%;
+}
+
+#valign { display: table-cell;
+  position: relative;
+  width: 468px;
+  vertical-align: middle;
+}
+
+#slideBG { display: table-cell;
+  position: relative;
+  width: 600px;
+  height: 600px;
+  vertical-align: middle;
+  background-color:#069;
+  z-index:0;
+  overflow:hidden;
+
+
+
+}
+	
+	
+#slide {
+  position:relative; top: 0px;/* z-index:3;*/
+  width: 468px; height: 294px;
+  text-align:center; overflow:hidden;
+  margin-right: auto; margin-left: auto; margin-top: 0px;
+  background-color: #fff;
+	border-top-color: #fff; border-bottom-color: #fff;
+  border-top-width: 4px;  border-bottom-width: 4px;
+    z-index:1;
+}
+#slide div {
+  position:absolute; top: 0px;
+  width: 468px; height: 294px;
+  text-align:center; overflow:hidden;
+  margin: auto auto;
+  background-color: #fff;
+   z-index:2;
+}

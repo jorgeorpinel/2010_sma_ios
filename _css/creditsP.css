@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#center { display: table;
+  position:absolute; top: 0px; left: 139px;
+  z-index: 1;
+  width: 760px; height: 100%;
+
+}
+
+#valign { display: table-cell;
+  position: relative;
+  width: 760px;
+  vertical-align: middle;
+}
+
+#creditsText {
+	display: table-cell;
+	position:relative;
+	top: 0px;
+	/*width: 700px;*/
+	width: 760px;
+	height: 490px;
+	/*height: 450px;*/
+	text-align:center;
+	vertical-align:middle;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 24px;
+	
+	z-index: 8;
+	overflow: visible;
+	visibility: visible;
+}
+
+#creditsText a {
+	color: #000;
+	text-decoration: none;
+}
+.creditsBG {
+background: url('../BGs/sky4.png') no-repeat;
+}
+
+.heading1 {
+	color: #FFF;
+}
+	
+.projectList {
+	font-size: 13px;
+	line-height: 15px;
+}
+
+#projectUI {
+	height: 78px;
+}

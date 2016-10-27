@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet"  href="_css/interface.css"/>
+<link rel="stylesheet" media="all and (orientation:landscape)" href="_css/creditsL.css">
+<link rel="stylesheet" media="all and (orientation:portrait)" href="_css/creditsP.css">
+
+<title>Shelton Mindel &amp; Associates</title>
+
+<script type="text/javascript" src="_scripts/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="_scripts/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="_scripts/jquery.cycle.min.2.8.8.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $("#menuRtab").click(function () { $("#centermenu").toggle("slide", { direction: "right"}, 2000, function() {
+    display = $(this).css('display');
+    if(display == 'table') $('#menuRtab').children().first().attr('src', 'UI/rightTAB-hide.gif');
+    else if(display == 'none') $('#menuRtab').children().first().attr('src', 'UI/rightTAB-menu.gif');
+  }); });
+  });
+</script>
+
+
+					
+</head>
+<body>
+<div id="container">
+  <div id="logo">
+    <a href="index.html"><img src="UI/SMAlogo.gif" alt="Shelton, Mindel &amp; Associates" height="80" width="600"/></a></div>
+
+    <!-- LEFT TAB -->
+    <div id="centerLtab">
+      <div class="tabLalign">
+        <div id="menuLtab"><img src="UI/leftTAB.gif" alt="menu tab" height="172" width="23"/></div>
+      </div>
+    </div>
+    <!--END  LEFT TAB -->
+
+  <div id="center">
+    <div id="valign">
+    
+      <div class="creditsBG" id="creditsText">
+      <p><span class="heading1">PHOTOGRAPHY:</span><br/>
+JONN COOLIDGE <br/>
+<span class="projectList">(Residences: 2209, 2309, 0459)</span><br/>
+DAN CORNISH <br/>
+<span class="projectList">(Fila Headquarters, Polo/Ralph Lauren International Headquarters)</span><br/>
+TODD EBERLEE<br/>
+<span class="projectList">(Loft 3514)</span><br/>
+LEE F. MINDEL <br/>
+<span class="projectList">(Private Jet 0559, Loft 1330, Residences: 0310, 0311)</span><br/>
+DERRY MOORE <br/>
+<span class="projectList">(Sting - London)</span><br/>
+MICHAEL MORAN <br/>
+<span class="projectList">(Residences: 0311, 4806, 0804, 4906, 3502, 5504, 2990,0510, 3514, 3514,  3510, 3509,
+ 0310, 2209,  0669,<br/> 0409,  2750, 0506, 3625, 1350, 3107,  3109, 0410, 0759, 3259.  
+Blackman Showroom, Celebrity Cruises,<br/> Michael's Pub, 56 Leonard St.)</span><br/>
+MICHAEL MUNDY <br/>
+<span class="projectList">(Residences: 2852, 0118)</span><br/>
+PETER MURDOCK <br/>
+<span class="projectList">(Residence 3510)</span> </p>
+
+<p><span class="heading1">WEBSITE DESIGN AND DEVELOPMENT:</span><br/>
+<a href="mailto:info@mindjog.com">MINDJOG COMMUNICATIONS</a></p>
+      </div>
+    </div>
+  </div>
+
+<div id="centerPimage"><div id="verticalAlign"><div id="projectUI"></div></div></div>
+
+  <!--MAIN MENU -->
+  <div style="display: none;" id="centermenu">
+    <div class="menualign">
+      <div id="menu">
+        <div id="projects" class="menuitem"><a href="projects.html" target="_self"><img src="UI/PROJECTS.gif" alt="PROJECTS" height="28" width="146"/></a></div>
+        <div id="products" class="menuitem"><a href="products.html" target="_self"><img src="UI/PRODUCTS.gif" alt="PRODUCTS" height="28" width="146"/></a></div>
+        <div id="profile" class="menuitem"><a href="profile.html" target="_self"><img src="UI/PROFILE.gif" alt="PROFILE" height="28" width="146"/></a></div>
+        <div id="philosophy" class="menuitem"><a href="philosophy.html" target="_self"><img src="UI/PHILOSOPHY.gif" alt="PHILOSOPHY" height="28" width="146"/></a></div>
+        <div id="process" class="menuitem"><a href="process.html" target="_self"><img src="UI/PROCESS.gif" alt="PROCESS" height="28" width="146"/></a></div>
+        <div id="awards" class="menuitem"><a href="awards.html" target="_self"><img src="UI/AWARDS.gif" alt="AWARDS" height="28" width="146"/></a></div>
+        <div id="periodicals" class="menuitem"><a href="periodicals.html" target="_self"><img src="UI/PERIODICALS.gif" alt="PERIODICALS" height="28" width="146"/></a></div>
+        <div id="books" class="menuitem"><a href="books.html" target="_self"><img src="UI/BOOKS.gif" alt="BOOKS" height="28" width="146"/></a></div>
+        <div id="contact" class="menuitem"><a href="contact.html" target="_self"><img src="UI/CONTACT.gif" alt="CONTACT" height="28" width="146"/></a></div>
+      </div>
+    </div>
+  </div>
+  <!--END MAIN MENU -->
+
+  <!--RIGHT TAB -->
+  <div id="centerRtab">
+    <div class="tabRalign">       
+      <div id="menuRtab"><img src="UI/rightTAB-menu.gif" alt="menu tab" height="172" width="23"/></div>
+    </div>
+  </div>
+  <!--END RIGHT TAB -->
+
+</div>
+</body>
+</html>

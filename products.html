@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Shelton Mindel &amp; Associates</title>
+
+<link rel="stylesheet"  href="_css/interface.css"/>
+<link rel="stylesheet"  href="_css/products.css"/>
+
+<script type="text/javascript" src="_scripts/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="_scripts/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="_scripts/jquery.cycle.min.2.8.8.js"></script>
+<script type="text/javascript" src="_scripts/jquery.scrollTo-min.js"></script>
+
+<script type="text/javascript">
+/* By Matt Kruse http://www.mail-archive.com/jquery-en@googlegroups.com/msg67743.html */
+$.fn.equals = function(compareTo) {
+  if (!compareTo || !compareTo.length || this.length!=compareTo.length) return false;
+  for (var i=0; i<this.length; i++)
+    if (this[i]!==compareTo[i]) return false;
+  return true;
+}
+
+var currentPanel = null;
+//var type = null; //todo: don't I need this?
+var productItem = null;
+
+var prodsLoaded = 0;
+/**
+ * loaded()
+ * used to load products images and start slideshows
+ * (and register click-on-thumb actions)
+ * @author Jorge Orpinel <jorge@orpinel.com>
+ */
+function loaded() {
+  prodsLoaded++;
+  if(prodsLoaded == 4) {  // the 4 slideshows have loaded, start them:
+    $('#lighting').cycle(options={ timeout:2000, speed:1000});
+    $('#furniture').cycle(options={ timeout:4000, speed:2000});
+    $('#textiles').cycle(options={ timeout:1500, speed:500});
+    $('#plumbing').cycle(options={ timeout:2000, speed:2000});
+    
+    // on thumb click:
+    $('.prod_thumb').click(function() { // pause slideshows & register links:
+      $('#lighting, #furniture, #textiles, #plumbing').cycle('pause');
+      type = $(this).parent().parent().attr('id');
+      
+      // add caption: //xxx: this is hardcoded..
+      switch(type) {
+        case 'lighting':
+          $('#imglink').attr('href', 'http://www.nessenlighting.com/results3.php?designer=Shelton%2C+Mindel+%26+Associates')
+            .text('Nessen Lighting');
+          $('#imglink2').attr('href', 'http://www.nessenlighting.com/results3.php?designer=Shelton%2C+Mindel+%26+Associates')
+            .text('see it on www.nessenlighting.com');
+          break;
+        case 'furniture':
+          $('#imglink').attr('href', 'http://www.knoll.com/designer/designer_detail.jsp?designer_id=154')
+            .text('Knoll');
+          $('#imglink2').attr('href', 'http://www.knoll.com/designer/designer_detail.jsp?designer_id=154')
+            .text('see it on www.knoll.com');
+          break;
+        case 'textiles':
+          $('#imglink').attr('href', 'http://www.waterworks.com/collections/waterworks/stratum/230')
+            .text('Waterworks - Stratum');
+          $('#imglink2').attr('href', 'http://www.waterworks.com/collections/waterworks/stratum/230')
+            .text('see it on www.waterworks.com');
+          break;
+        case 'plumbing':
+          imgNo = parseInt($(this).attr('class').split(' ')[1].substr(1));
+          if (isNaN(imgNo)) break; // should never happen, in theory
+          $('#imglink').attr('href', 'http://www.waterworks.com/collections/waterworks/'
+                                     + (imgNo<8?'25/203':'opus/269') )
+            .text('Waterworks - ' +(imgNo<8?'.25':'Opus') );
+          $('#imglink2').attr('href', 'http://www.waterworks.com/collections/waterworks/'
+                                      + (imgNo<8?'25/203':'opus/269') )
+            .text('see it on www.waterworks.com');
+          break;
+      }
+      
+      productItem = $('#i'+type);
+      if($('#pmenu').css('display') == 'none') $('#menuLtab').click();
+      productItem.toggleClass('i'+type[0]+'y'); // turn on product type menu item highlight
+      $('#fader, #slider-wrapper, #'+type+'-slider, #back, #fwd').show();
+      currentPanel = $(".slider > .panel > .image > img[alt='"+ $(this).attr('alt') +"']").parent().parent();
+      $('#slider-wrapper').scrollTo($(".slider > .panel > .image > img[alt='"+ $(this).attr('alt') +"']").parent().parent());
+    });
+  }
+}
+
+$(document).ready(function() {
+  // menus slide on click:
+  $("#menuLtab").click(function () {
+    $("#centerPmenu").toggle("slide", { direction: "left"}, 2000, function() {
+      display = $(this).css('display');
+      if(display == 'table') $('#menuLtab').children().first().attr('src', 'UI/leftTAB-hide.gif');
+      else if(display == 'none') $('#menuLtab').children().first().attr('src', 'UI/leftTAB-products.gif');
+    });
+  });
+  $("#menuRtab").click(function () {
+    $("#centermenu").toggle("slide", { direction: "right"}, 2000, function() {
+      display = $(this).css('display');
+      if(display == 'table') $('#menuRtab').children().first().attr('src', 'UI/rightTAB-hide.gif');
+      else if(display == 'none') $('#menuRtab').children().first().attr('src', 'UI/rightTAB-menu.gif');
+    });
+  });
+
+  // get (ajax) slideshows images:
+  $.get('productMENU/slide.php', {prod_dir: "LIGHTINGc"}, function(data){
+    $('#lighting').append(data); $('#lighting').show(); loaded(); });
+  $.get('productMENU/slide.php', {prod_dir: "FURNITUREc"}, function(data){
+    $('#furniture').append(data); $('#furniture').show(); loaded(); });
+  $.get('productMENU/slide.php', {prod_dir: "TEXTILESc"}, function(data){
+    $('#textiles').append(data); $('#textiles').show(); loaded(); });
+  $.get('productMENU/slide.php', {prod_dir: "PLUMBINGc"}, function(data){
+    $('#plumbing').append(data); $('#plumbing').show(); loaded(); });
+
+  // register slideshows resuming:
+  $('#slider-wrapper,#caption').click(function() {
+    productItem.toggleClass('i'+type[0]+'y'); // turn off product type menu item highlight
+    $('#fader, #slider-wrapper, .slider, #back, #fwd').hide();
+    $('#imglink').text(''); $('#imglink2').text('');
+    $('#lighting, #furniture, #textiles, #plumbing').cycle('resume');
+  });
+
+  // on products menu items click:
+  $('#ilighting, #ifurniture, #itextiles, #iplumbing').click(function() {
+    if (productItem) {
+      if (productItem.attr('id') == $(this).attr('id')) return; // on re-click do nothing
+      pt = productItem.attr('id').substring(1, 2);
+      if(productItem.hasClass('i' + pt + 'y')) productItem.toggleClass('i' + pt + 'y'); // de-highlight
+    }
+//    productItem = $(this);
+//    pt = productItem.attr('id').substring(1, 2);
+//    productItem.toggleClass('i' + pt + 'y');
+//    alert(3);
+    $('#ilighting > div, #ifurniture > div, #itextiles > div, #iplumbing > div').remove(); // remove highlighting
+    $('#fader, #slider-wrapper, .slider, #back, #fwd').hide();
+    $('#imglink').text('');
+    $('#'+ $(this).attr('id').substring(1) +' > div > .i0').click(); // simulate click on 1st thumb in prod-type
+  });
+
+  // slider arrows actions:
+  $('#back').click(function() {
+    parent = currentPanel.parent();
+    if(currentPanel.equals(parent.children().first())) currentPanel = parent.children().last();
+    else currentPanel = currentPanel.prev();
+    $('#slider-wrapper').scrollTo(currentPanel, 800);
+    
+    if (productItem.attr('id') != 'iplumbing') return; // rethink plumbing caption:
+    alt = currentPanel.children().children().attr('alt');
+    imgNo = parseInt(alt.substring(alt.length-2),10);
+    if (isNaN(imgNo)) return; // should never happen, in theory
+    $('#imglink').attr('href', 'http://www.waterworks.com/collections/waterworks/'
+                               + (imgNo<8?'25/203':'opus/269') )
+      .text('Waterworks - ' +(imgNo<8?'.25':'Opus') );
+    $('#imglink2').attr('href', 'http://www.waterworks.com/collections/waterworks/'
+                                + (imgNo<8?'25/203':'opus/269') )
+      .text('see it on www.waterworks.com');
+  });
+  $('#fwd').click(function() {
+    parent = currentPanel.parent();
+    if(currentPanel.equals(parent.children().last())) currentPanel = parent.children().first();
+    else currentPanel = currentPanel.next();
+    $('#slider-wrapper').scrollTo(currentPanel, 800);
+    
+    if (productItem.attr('id') != 'iplumbing') return; // rethink plumbing caption:
+    alt = currentPanel.children().children().attr('alt');
+    imgNo = parseInt(alt.substring(alt.length-2),10);
+    if (isNaN(imgNo)) return; // should never happen, in theory
+    $('#imglink').attr('href', 'http://www.waterworks.com/collections/waterworks/'
+                               + (imgNo<8?'25/203':'opus/269') )
+      .text('Waterworks - ' +(imgNo<8?'.25':'Opus') );
+    $('#imglink2').attr('href', 'http://www.waterworks.com/collections/waterworks/'
+                                + (imgNo<8?'25/203':'opus/269') )
+      .text('see it on www.waterworks.com');
+  });
+  
+});
+</script>
+
+</head>
+<body>
+<div id="container">
+
+  <!-- LOGO -->
+  <div id="logo" class="project">
+    <a href="index.html"><img src="UI/SMAlogo.gif" width="600" height="80" alt="Shelton, Mindel &amp; Associates" /></a>
+  </div>
+
+    <!-- LEFT TAB -->
+    <div id="centerLtab">
+      <div class="tabLalign">
+        <div id="menuLtab"><img src="UI/leftTAB-products.gif" alt="L menu tab" height="172" width="23"/></div>
+      </div>
+    </div>
+    <!--END  LEFT TAB -->
+
+  <!--PRODUCTS MENU -->
+  <div style="display: none;" id="centerPmenu">
+    <div class="pmenuValign">
+      <div id="pmenu">
+        <div id="ilighting"  class="menuitem ilg" ></div>
+        <div id="ifurniture" class="menuitem ifg"></div>
+        <div id="itextiles"  class="menuitem itg"></div>
+        <div id="iplumbing"  class="menuitem ipg"></div>
+      </div>
+    </div>
+  </div>
+  <!--END PRODUCTS MENU --> 
+
+  <!--PRODUCTS Slideshows -->
+  <div id="centerContainer">  <!-- absolute pos -->
+    <div id="valignContainer">  <!-- relative -->
+      <div id="productContainer"> <!-- rel -->
+        
+        <!-- absolutes: -->
+        <div style="display: none;" id="lighting" class="products"></div>
+        <div style="display: none;" id="furniture" class="products"></div>
+        <div style="display: none;" id="textiles" class="products"></div> 
+        <div style="display: none;" id="plumbing" class="products"></div>
+
+        <div style="display: none;" id="fader"></div> <!-- abs, z 901-->
+
+        <!-- products slider //todo: hardcoded! -->
+        <div style="display: none;" id="slider-wrapper"> <!-- abs, z 902-->
+          <div style="display: none;" id="lighting-slider" class="slider"> <!-- 0-21 hardcoded images-->
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting00.jpg" alt="lighting00" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting01.jpg" alt="lighting01" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting02.jpg" alt="lighting02" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting03.jpg" alt="lighting03" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting04.jpg" alt="lighting04" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting05.jpg" alt="lighting05" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting06.jpg" alt="lighting06" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting07.jpg" alt="lighting07" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting08.jpg" alt="lighting08" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting09.jpg" alt="lighting09" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting10.jpg" alt="lighting10" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting11.jpg" alt="lighting11" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting12.jpg" alt="lighting12" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting13.jpg" alt="lighting13" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting14.jpg" alt="lighting14" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting15.jpg" alt="lighting15" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting16.jpg" alt="lighting16" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting17.jpg" alt="lighting17" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting18.jpg" alt="lighting18" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting19.jpg" alt="lighting19" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting20.jpg" alt="lighting20" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/LIGHTINGbig/lighting21.jpg" alt="lighting21" /></div></div>
+          </div>
+          <div style="display: none;" id="furniture-slider" class="slider"> <!-- 0-11 hardcoded images-->
+            <div class="panel"><div class="image"><img src="productMENU/FURNITUREbig/furniture00.jpg" alt="furniture00" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/FURNITUREbig/furniture01.jpg" alt="furniture01" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/FURNITUREbig/furniture02.jpg" alt="furniture02" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/FURNITUREbig/furniture03.jpg" alt="furniture03" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/FURNITUREbig/furniture04.jpg" alt="furniture04" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/FURNITUREbig/furniture05.jpg" alt="furniture05" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/FURNITUREbig/furniture06.jpg" alt="furniture06" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/FURNITUREbig/furniture07.jpg" alt="furniture07" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/FURNITUREbig/furniture08.jpg" alt="furniture08" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/FURNITUREbig/furniture09.jpg" alt="furniture09" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/FURNITUREbig/furniture10.jpg" alt="furniture10" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/FURNITUREbig/furniture11.jpg" alt="furniture11" /></div></div>
+          </div>
+          <div style="display: none;" id="textiles-slider" class="slider"> <!-- 0-10 hardcoded images-->
+            <div class="panel"><div class="image"><img src="productMENU/TEXTILESbig/textiles00.jpg" alt="textiles00" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/TEXTILESbig/textiles01.jpg" alt="textiles01" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/TEXTILESbig/textiles02.jpg" alt="textiles02" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/TEXTILESbig/textiles03.jpg" alt="textiles03" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/TEXTILESbig/textiles04.jpg" alt="textiles04" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/TEXTILESbig/textiles05.jpg" alt="textiles05" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/TEXTILESbig/textiles06.jpg" alt="textiles06" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/TEXTILESbig/textiles07.jpg" alt="textiles07" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/TEXTILESbig/textiles08.jpg" alt="textiles08" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/TEXTILESbig/textiles09.jpg" alt="textiles09" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/TEXTILESbig/textiles10.jpg" alt="textiles10" /></div></div>
+          </div>
+          <div style="display: none;" id="plumbing-slider" class="slider"> <!-- 0-20 hardcoded images-->
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing00.jpg" alt="plumbing00" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing01.jpg" alt="plumbing01" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing02.jpg" alt="plumbing02" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing03.jpg" alt="plumbing03" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing04.jpg" alt="plumbing04" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing05.jpg" alt="plumbing05" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing06.jpg" alt="plumbing06" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing07.jpg" alt="plumbing07" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing08.jpg" alt="plumbing08" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing09.jpg" alt="plumbing09" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing10.jpg" alt="plumbing10" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing11.jpg" alt="plumbing11" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing12.jpg" alt="plumbing12" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing13.jpg" alt="plumbing13" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing14.jpg" alt="plumbing14" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing15.jpg" alt="plumbing15" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing16.jpg" alt="plumbing16" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing17.jpg" alt="plumbing17" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing18.jpg" alt="plumbing18" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing19.jpg" alt="plumbing19" /></div></div>
+            <div class="panel"><div class="image"><img src="productMENU/PLUMBINGbig/plumbing20.jpg" alt="plumbing20" /></div></div>
+          </div>
+        </div>
+        <!-- //slider -->
+        
+        <div style="display: none;" id="back" class="arrow"></div>
+        <div style="display: none;" id="fwd" class="arrow"></div>
+
+        <div id="caption"><a id="imglink" href="#"></a></div>
+        <div id="caption2"><a id="imglink2" href="#"></a></div>
+
+      </div>
+    </div>
+  </div>
+  <!--END PRODUCTS Slideshows --> 
+
+<div id="centerPimage"><div id="verticalAlign"><div id="projectUI">
+  <div id="credits"><a href="credits.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+</div></div></div>
+
+  <!--MAIN MENU -->
+  <div style="display: none;" id="centermenu">
+    <div class="menualign">
+      <div id="menu">
+        <div id="projects" class="menuitem"><a href="projects.html" target="_self"><img src="UI/PROJECTS.gif" alt="PROJECTS" height="28" width="146"/></a></div>
+        <div id="products" class="menuitem"><a href="products.html" target="_self"><img src="UI/PRODUCTSy.gif" alt="PRODUCTS" height="28" width="146"/></a></div>
+        <div id="profile" class="menuitem"><a href="profile.html" target="_self"><img src="UI/PROFILE.gif" alt="PROFILE" height="28" width="146"/></a></div>
+        <div id="philosophy" class="menuitem"><a href="philosophy.html" target="_self"><img src="UI/PHILOSOPHY.gif" alt="PHILOSOPHY" height="28" width="146"/></a></div>
+        <div id="process" class="menuitem"><a href="process.html" target="_self"><img src="UI/PROCESS.gif" alt="PROCESS" height="28" width="146"/></a></div>
+        <div id="awards" class="menuitem"><a href="awards.html" target="_self"><img src="UI/AWARDS.gif" alt="AWARDS" height="28" width="146"/></a></div>
+        <div id="periodicals" class="menuitem"><a href="periodicals.html" target="_self"><img src="UI/PERIODICALS.gif" alt="PERIODICALS" height="28" width="146"/></a></div>
+        <div id="books" class="menuitem"><a href="books.html" target="_self"><img src="UI/BOOKS.gif" alt="BOOKS" height="28" width="146"/></a></div>
+        <div id="contact" class="menuitem"><a href="contact.html" target="_self"><img src="UI/CONTACT.gif" alt="CONTACT" height="28" width="146"/></a></div>
+      </div>
+    </div>
+  </div>
+  <!--END MAIN MENU -->
+
+  <!--RIGHT TAB -->
+  <div id="centerRtab">
+    <div class="tabRalign">       
+      <div id="menuRtab"><img src="UI/rightTAB-menu.gif" alt="menu tab" height="172" width="23"/></div>
+    </div>
+  </div>
+  <!--END RIGHT TAB -->
+
+</div>
+</body>
+</html>

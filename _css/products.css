@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#centerPmenu{ display: table;
+  position:absolute; top: 0px; left:25px; z-index:3;
+  width: 159px; height: 100%;
+  vertical-align: middle;
+  background-color: #fff;
+
+}
+
+.pmenuValign{ display: table-cell;
+  position:relative; left: 794px;
+  width: 100%; height: 100%;
+  text-align:center; vertical-align: middle;
+}
+
+#pmenu{
+  position: relative;
+  width: 100%; height: 280px;
+  text-align:center;
+	margin: 0 auto;
+}
+
+.menuitem { cursor: pointer;
+  width: 134px; height: 28px;
+}
+#ilighting, #ifurniture, #itextiles, #iplumbing { position:absolute; left: 3 }
+#ilighting  { top:  30px } .ilg {background: url('../UI/LIGHTING.gif') no-repeat } .ily {background: url('../UI/LIGHTINGy.gif') no-repeat }
+#ifurniture { top:  90px } .ifg {background: url('../UI/FURNITURE.gif') no-repeat } .ify {background: url('../UI/FURNITUREy.gif') no-repeat }
+#itextiles  { top: 150px } .itg {background: url('../UI/TEXTILES.gif') no-repeat } .ity {background: url('../UI/TEXTILESy.gif') no-repeat }
+#iplumbing  { top: 210px } .ipg {background: url('../UI/PLUMBING.gif') no-repeat } .ipy {background: url('../UI/PLUMBINGy.gif') no-repeat }
+
+#centerContainer{
+  position:absolute;
+  width: 664px;
+  height: 100%;
+  top: 0px;
+  left: 157px;
+  display:table;
+  z-index: 2;
+}
+#valignContainer{ 
+  position:relative;
+  width: 664px;
+  height: 100%;
+  display:table-cell;
+  vertical-align:middle;
+  overflow:hidden;
+}
+#productContainer{  
+  position:relative;
+  top: 0px;
+  left: 0px;
+  width: 664px;
+  height: 444px;
+  text-align: right;
+  background-color: #666;
+  overflow: hidden;
+}
+
+.products {
+  position:absolute;
+  width: 332px; height: 222px;
+}.products div {cursor:pointer;position:absolute;}
+#lighting {
+  top: 0px;
+  left: 0px;
+  text-align: right;
+}#lighting div{right:0;}
+#furniture {
+  top: 0px;
+  left: 332px;
+  text-align: left;
+}
+#textiles {
+  top: 222px;
+  left: 332px;
+  text-align: left;
+}
+#plumbing {
+  top: 222px;
+  left: 0px;
+  text-align: right;
+}#plumbing div{right:0;}
+
+#fader {
+  position: absolute; top: 0; left: 0; z-index: 901;
+  height: 100%; width: 100%;
+  background: #fff; opacity: .85;
+}
+  
+#slider-wrapper {
+  position: absolute; z-index:902;
+  height:444px; width:664px; /* hardcoded, could inherit? */
+  overflow: hidden;
+}
+  #slider-wrapper .slider { cursor: pointer;
+    position: absolute; top: 0; left: 0;
+    height:444px;
+  }
+    #slider-wrapper .slider .panel {
+      display: table-cell;
+      height: 444px;
+      text-align: center; vertical-align: middle; white-space:nowrap;
+    }
+      #slider-wrapper .slider .panel .image { width: 664px }
+  
+  #lighting-slider { width: 13944px; } /* = 664 x 21 */
+  #furniture-slider { width: 7968px; } /* = 664 x 12 */
+  #textiles-slider { width:  6640px; } /* = 664 x 10 */
+  #plumbing-slider { width: 13280px; } /* = 664 x 20 */
+
+.arrow { cursor: pointer;
+  position:absolute;top:50%;margin-top:-40px;z-index:903;
+  width:80px;height:80px;
+}
+#back { left:0; background: url('../UI/p-arrowL.gif') no-repeat center center; }
+#fwd { right:0; background: url('../UI/p-arrowR.gif') no-repeat center center; }
+
+#caption {
+	position: absolute; bottom:26px; z-index:903;
+	width:100%; height:20px; line-height:20px;
+	white-space: nowrap; text-align: center;
+	overflow: hidden;
+}
+#caption2 {
+	position: absolute; bottom:10px; z-index:903;
+	width:100%; height:20px; line-height:20px;
+	white-space: nowrap; text-align: center;
+	overflow: hidden;
+}
+
+#imglink {
+	font-size: 14px;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #666;
+	text-decoration: none;
+}
+#imglink2 {
+	font-size: 10px;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #999;
+	text-decoration: none;
+}
+

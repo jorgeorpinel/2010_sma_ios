@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet"  href="_css/interface.css"/>
+<link rel="stylesheet" media="all and (orientation:portrait)" href="_css/infoP.css">
+<link rel="stylesheet" media="all and (orientation:landscape)" href="_css/infoL.css">
+
+<title>Shelton Mindel &amp; Associates</title>
+
+<script type="text/javascript" src="_scripts/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="_scripts/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="_scripts/iscroll.js"></script>
+<script type="text/javascript">
+var myScroll;
+var menuVisible = false;
+var animating = false;
+
+$(document).ready(function() {
+	menuVisible = ($('#centermenu').css('display') == 'table');
+	
+  $("#menuRtab").click(function () { if(animating) return; animating = true;
+		if(menuVisible) // slide out:
+      $('#centermenu').animate({left:978}, {duration:2000, complete:function() {
+        display = $('#centermenu').css('display');
+        $('#menuRtab').children().first().attr('src', 'UI/rightTAB-menu.gif');
+        $('#centermenu').toggle();
+        menuVisible = false; animating = false;
+      }});
+    else { // slide in:
+      $('#centermenu').toggle();
+      $('#centermenu').animate({left:794}, {duration:2000, complete:function() {
+        $('#menuRtab').children().first().attr('src', 'UI/rightTAB-hide.gif');
+        menuVisible = true; animating = false;
+	    }});
+			}
+	});
+	
+	myScroll = new iScroll('scroller');
+});
+</script>
+
+<style type="text/css">
+<!--
+td {
+	padding-right: 40px;
+	padding-bottom: 40px;
+	text-align:left;
+	vertical-align: top;
+}
+table {
+	padding-left: 25px;
+}
+a {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	color: #333;
+	text-decoration: none;
+}
+-->
+</style>
+					
+</head>
+<body>
+<div id="container" style="overflow: hidden;">
+  <div id="logo">
+     <a href="index.html"><img src="UI/SMAlogo.gif" alt="Shelton, Mindel &amp; Associates" height="80" width="600"/></a></div>
+
+    <!-- LEFT TAB -->
+    <div id="centerLtab">
+      <div class="tabLalign">
+        <div id="menuLtab"><img src="UI/leftTAB.gif" alt="menu tab" height="172" width="23"/></div>
+      </div>
+    </div>
+    <!--END  LEFT TAB -->
+
+  <div id="center">
+    <div id="valign">
+    
+      <div id="infoText" class="profile">
+      <div id="wrapper">
+        <div id="scroller">
+          
+           <div id="profileText" class="SMAtext">  
+            <p><span class="coloredText">Firm</span></p>
+            <p><span class="coloredText">Shelton, Mindel & Associates</span> is an architectural firm, established in 1978, providing complete architectural, interiors and product design services for corporate, cultural, academic, retail, recreational, hospitality and residential clients.</p> 
+            
+<p>The firm is the recipient of twenty-eight AIA awards for interior architecture, seven <i>Interior Design</i> magazine Best of Year awards for residential and commercial interiors; fourteen design awards from the Society of American Registered Architects, a Progressive Architecture citation, three Roscoe awards for product design, as well as three Good Design Awards and two American Architecture Awards from The Chicago Athenaeum. The American Institute of Architecture, San Francisco Museum of Fine Arts, National Academy of Design and Houston Museum of Fine Arts have exhibited the firm’s work in both traveling and permanent exhibitions.  Product design lines include collections for Knoll, Waterworks, Jack Lenor Larsen, V’Soske and Nessen Lighting.  <i>Architectural Digest</i> has recognized SMA as one of the top 100 design firms of the last century and Peter L. Shelton and Lee F. Mindel, FAIA were recognized as the Deans of American Design in 2005.  Both Peter L. Shelton and Lee F. Mindel, FAIA, have been inducted into the Interior Design Hall of Fame.</p>
+          
+<p>“Their renown has grown along with their client roster: Prominent shelter magazines frequently publish their residential projects, and it would be difficult to find a book on influential contemporary interiors that doesn’t mention their work. Their contract projects include ocean liners, the world’s largest disco, and corporate headquarters for Fila and Ralph Lauren... But regardless of the scale or nature of a project, they approach each one with the same discipline and insight, combining to achieve their trademark synthesis of architecture and design.” David Perrelli, <i>The Pennsylvania Gazzette</i></p>
+
+            <p><span class="coloredText">Partners</span></p>
+            <p><span class="coloredText">Mr. Shelton</span> studied architecture at the University of Pennsylvania and Pratt Institute where he received his degree in 1975.  He worked for the New York firms of Edward Durell Stone & Associates and Emery Roth & Sons prior to his founding the present organization.</p>
+            <p><span class="coloredText">Mr. Mindel</span> received his Master of Architecture from Harvard University in 1976 after obtaining his Bachelor of Arts, Cum Laude, with Distinction in Architecture, at the University of Pennsylvania.  He worked for the New York architecture firms of Skidmore, Owings, & Merrill and Rogers, Butler, Burgun.</p>
+            <p><span class="coloredText">Associates</span></p> 
+            <p><span class="coloredText">Michael Neal</span>, an Associate and Senior Architect at Shelton, Mindel & Associates since 1986, received his Bachelor of Architecture degree from Cornell University in 1972.  Prior to joining SMA, he was the Project Architect at Machinist Associates and McDonough Rainey for numerous residential and corporate commissions including the award-winning restaurant, The Quilted Giraffe, in the AT&T Building.</p>
+            <p><span class="coloredText">Grace Sierra</span>, a Senior Interior Designer at Shelton, Mindel & Associates, graduated from Parsons School of Design in New York City.  Prior to joining SMA she was the Visual Manager for the flagship Ann Taylor store in Manhattan and was on the Visual Merchandising team for the first Geoffrey Beene store at the Sherry Netherland located in New York City.</p>
+            <p><span class="coloredText">Vanesa Dimitriou</span>, an Associate at Shelton, Mindel & Associates, started her studies in Architecture and urban Planning at Universidad de Belgrano, (University of Belgrano) in Buenos Aires, Argentina and received her Bachelor of Architecture Degree from the Gerald D. Hines School of Architecture at the University of Houston, TX. She was the recipient of the IEFS (International Education Fee Scholarship) for a study abroad program at the &#8220;Centre d’Etude d’Architecture et d’Urbanisme&#8221;, at Saintes, France. Prior to joining SMA, she worked at Brand %2B Allen Architects in Houston, TX, specializing in high-end retail design, and at Ted Moudis Associates in New York.</p>
+            <p><span class="coloredText">Ivan Zidarov</span>, an Associate at Shelton, Mindel & Associates, received this Master of Architecture Degrees from Royal Institute of Technology in Stockholm, Sweden and from University of Washington in Seattle. He was the recipient on the Valley Scholarship for Advanced Studies in Architecture. Prior to joining SMA, he worked as an architect at Rafael Vinoly Architects, PC and as a Project Architect ast Gwathmey Siegal & Associates Architects, LLC. Most recently, he worked as a Project Manager at MR Architecture & Decor in New York City and at Project-Space in Baltimore.</p>
+            <p><span class="coloredText">Thomas McMahon</span>, an Associate at Shelton, Mindel & Associates, received his Master of Architecture from Harvard University after obtaining his Bachelor of Fine Arts Degree from the University of Massachusetts at Amherst. Prior to joining SMA, he worked at Foster & Partners in London and at C&G Partners in New York. He has also been affiliated with oceanD and was a winner of the Architecture League of New York’s First Step Housing Competition.</p>
+            <p><span class="coloredText">Marc Newman</span>, an Associate at Shelton, Mindel & Associates, received his Bachelor of Landscape Architecture from Cornell University and his Master of Architecture from the Yale School of Architecture, where he received the Pickard Chilton Scholarship and the Carol Meeks Memorial Scholarship. Prior to joining SMA, he worked for the offices of R/F Landscape Architecture, Arquitectonica in New York City, and Stalker Lab in Rome, Italy.</p>
+          </div> <!-- //profileText -->
+          
+	      </div>
+      </div> <!-- //wrapper -->
+      
+      </div>
+      
+    </div>
+  </div>
+
+<div id="centerPimage"><div id="verticalAlign">
+
+<div id="projectUI">
+ <div id="credits"><a href="credits.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+ </div></div></div>
+
+  <!--MAIN MENU -->
+  <div style="display: none; left: 978px;" id="centermenu">
+    <div class="menualign" style="right: -184px;">
+      <div id="menu">
+        <div id="projects" class="menuitem"><a href="projects.html" target="_self"><img src="UI/PROJECTS.gif" alt="PROJECTS" height="28" width="146"/></a></div>
+        <div id="products" class="menuitem"><a href="products.html" target="_self"><img src="UI/PRODUCTS.gif" alt="PRODUCTS" height="28" width="146"/></a></div>
+        <div id="profile" class="menuitem"><a href="profile.html" target="_self"><img src="UI/PROFILEy.gif" alt="PROFILE" height="28" width="146"/></a></div>
+        <div id="philosophy" class="menuitem"><a href="philosophy.html" target="_self"><img src="UI/PHILOSOPHY.gif" alt="PHILOSOPHY" height="28" width="146"/></a></div>
+        <div id="process" class="menuitem"><a href="process.html" target="_self"><img src="UI/PROCESS.gif" alt="PROCESS" height="28" width="146"/></a></div>
+        <div id="awards" class="menuitem"><a href="awards.html" target="_self"><img src="UI/AWARDS.gif" alt="AWARDS" height="28" width="146"/></a></div>
+        <div id="periodicals" class="menuitem"><a href="periodicals.html" target="_self"><img src="UI/PERIODICALS.gif" alt="PERIODICALS" height="28" width="146"/></a></div>
+        <div id="books" class="menuitem"><a href="books.html" target="_self"><img src="UI/BOOKS.gif" alt="BOOKS" height="28" width="146"/></a></div>
+        <div id="contact" class="menuitem"><a href="contact.html" target="_self"><img src="UI/CONTACT.gif" alt="CONTACT" height="28" width="146"/></a></div>
+      </div>
+    </div>
+  </div>
+  <!--END MAIN MENU -->
+
+  <!--RIGHT TAB -->
+  <div id="centerRtab">
+    <div class="tabRalign">       
+      <div id="menuRtab"><img src="UI/rightTAB-menu.gif" alt="menu tab" height="172" width="23"/></div>
+    </div>
+  </div>
+  <!--END RIGHT TAB -->
+
+</div>
+</body>
+</html>

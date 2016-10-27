@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#center { display: table;
+  position:absolute; top: 0px; left: 139px; z-index: 1;
+  width: 700px; height: 100%;
+
+}
+
+#valign { display: table-cell;
+  position: relative;
+  width: 700px;
+  vertical-align: middle;
+}
+
+#creditsText {
+	display: table-cell;
+	position:relative;
+	top: 0px;
+	width: 700px;
+	height: 450px;
+	text-align:center;
+	vertical-align:middle;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	
+	overflow: visible;
+	visibility: visible;
+}
+
+.profile {
+	background: url('../BGs/profileBG6.jpg') no-repeat;
+}
+.process {
+	background: url('../BGs/processBG.jpg') no-repeat;
+}
+.philosophy {
+	background: url('../BGs/philosophyBG.jpg') no-repeat;
+}
+	
+
+#wrapper {
+  position:relative; top: 0px; left: 0px;/* z-index:1;*/
+  width:700px; height: 400px;
+  overflow:hidden;
+
+}
+
+#scroller {
+  left: 0px;
+ width:610px;/* width:90%;*/
+  padding-bottom: 150px; padding-left: 40px; padding-right: 30px;
+  margin-right: auto; margin-left: auto;
+}
+
+.SMAtext {
+	line-height: 24px;
+	color: #333;
+	text-align: justify;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	
+}
+
+.SMAtext a {
+  line-height: 24px;
+  color: #333; text-align: justify;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  text-decoration:none;
+}
+
+.coloredText {
+  line-height: 24px;
+  color: #966;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+}
+/*
+#projectUI {
+	height: 78px;
+	z-index:10;
+}*/

@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet"  href="_css/interface.css"/>
+<link rel="stylesheet" media="all and (orientation:portrait)" href="_css/booksP.css">
+<link rel="stylesheet" media="all and (orientation:landscape)" href="_css/booksL.css">
+
+<title>Shelton Mindel &amp; Associates</title>
+
+<script type="text/javascript" src="_scripts/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="_scripts/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="_scripts/iscroll.js"></script>
+<script type="text/javascript">
+var myScroll;
+var menuVisible = false;
+var animating = false;
+
+$(document).ready(function() {
+  menuVisible = ($('#centermenu').css('display') == 'table');
+  
+  $("#menuRtab").click(function () { if(animating) return; animating = true;
+    if(menuVisible) // slide out:
+      $('#centermenu').animate({left:978}, {duration:2000, complete:function() {
+        display = $('#centermenu').css('display');
+        $('#menuRtab').children().first().attr('src', 'UI/rightTAB-menu.gif');
+        $('#centermenu').toggle();
+        menuVisible = false; animating = false;
+      }});
+    else { // slide in:
+      $('#centermenu').toggle();
+      $('#centermenu').animate({left:794}, {duration:2000, complete:function() {
+        $('#menuRtab').children().first().attr('src', 'UI/rightTAB-hide.gif');
+        menuVisible = true; animating = false;
+      }});
+      }
+  });
+  
+  myScroll = new iScroll('scroller');
+});
+</script>
+
+<style type="text/css">
+<!--
+td {
+	padding-right: 40px;
+	padding-bottom: 40px;
+	text-align:left;
+	vertical-align: top;
+}
+table {
+	padding-left: 25px;
+}
+a {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	color: #333;
+	text-decoration: none;
+}
+-->
+</style>
+					
+</head>
+<body>
+<div id="container" style="overflow: hidden;">
+  <div id="logo">
+     <a href="index.html"><img src="UI/SMAlogo.gif" alt="Shelton, Mindel &amp; Associates" height="80" width="600"/></a></div>
+
+    <!-- LEFT TAB -->
+    <div id="centerLtab">
+      <div class="tabLalign">
+        <div id="menuLtab"><img src="UI/leftTAB.gif" alt="menu tab" height="172" width="23"/></div>
+      </div>
+    </div>
+    <!--END  LEFT TAB -->
+
+  <div id="center">
+    <div id="valign">
+    
+      <div id="creditsText" class="books">
+      
+ 
+    <div id="wrapper">
+	<div id="scroller">
+	    <div id="booksText" class="SMAtext">  
+
+<p>Apartamentos Norteamericanos</p> 						 
+<p>Bar Excellence</p>		
+<p>Bars Pubs Cafes</p>								
+<p>Bath by Design</p>		
+<p>The Best of The World of Interiors</p>					
+<p>Corporate Interiors</p>			
+<p>Corporate Interiors No. 2</p>				 		
+<p>Dream Apartments</p>			
+<p>Fantasy Spaces</p>								
+<p>Furniture by Architects</p>	
+<p>House Beautiful Storage</p>				 			
+<p>Influential Interiors</p>		
+<p>Inside Architecture</p>					
+<p>Interior Design, The Textbook</p>
+<p>Interior Details</p>						
+<p>Jean Prouve</p>
+<p>Lighting</p>	
+<p>Living in New York</p>					
+<p>Living Under Glass</p>
+<p>Living Well</p>								
+<p>Minimal Interiors</p>			
+<p>Neoclassicism</p>							
+<p>The NY Times Book of Modern Design</p>					
+<p>Outdoor Rooms</p>
+<p>Pleasure Paradises</p>
+<p>The Sensual Home</p>					
+<p>Timeless Design</p>
+
+    </div //booksText>
+	</div>
+</div>
+      
+      </div>
+      
+    </div>
+  </div>
+
+<div id="centerPimage"><div id="verticalAlign">
+
+<div id="projectUI">
+ <div id="credits"><a href="credits.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+ </div></div></div>
+
+  <!--MAIN MENU -->
+  <div style="display: none; left: 978px;" id="centermenu">
+    <div class="menualign" style="right: -184px;">
+      <div id="menu">
+        <div id="projects" class="menuitem"><a href="projects.html" target="_self"><img src="UI/PROJECTS.gif" alt="PROJECTS" height="28" width="146"/></a></div>
+        <div id="products" class="menuitem"><a href="products.html" target="_self"><img src="UI/PRODUCTS.gif" alt="PRODUCTS" height="28" width="146"/></a></div>
+        <div id="profile" class="menuitem"><a href="profile.html" target="_self"><img src="UI/PROFILE.gif" alt="PROFILE" height="28" width="146"/></a></div>
+        <div id="philosophy" class="menuitem"><a href="philosophy.html" target="_self"><img src="UI/PHILOSOPHY.gif" alt="PHILOSOPHY" height="28" width="146"/></a></div>
+        <div id="process" class="menuitem"><a href="process.html" target="_self"><img src="UI/PROCESS.gif" alt="PROCESS" height="28" width="146"/></a></div>
+        <div id="awards" class="menuitem"><a href="awards.html" target="_self"><img src="UI/AWARDS.gif" alt="AWARDS" height="28" width="146"/></a></div>
+        <div id="periodicals" class="menuitem"><a href="periodicals.html" target="_self"><img src="UI/PERIODICALS.gif" alt="PERIODICALS" height="28" width="146"/></a></div>
+        <div id="books" class="menuitem"><a href="books.html" target="_self"><img src="UI/BOOKSy.gif" alt="BOOKS" height="28" width="146"/></a></div>
+        <div id="contact" class="menuitem"><a href="contact.html" target="_self"><img src="UI/CONTACT.gif" alt="CONTACT" height="28" width="146"/></a></div>
+      </div>
+    </div>
+  </div>
+  <!--END MAIN MENU -->
+
+  <!--RIGHT TAB -->
+  <div id="centerRtab">
+    <div class="tabRalign">       
+      <div id="menuRtab"><img src="UI/rightTAB-menu.gif" alt="menu tab" height="172" width="23"/></div>
+    </div>
+  </div>
+  <!--END RIGHT TAB -->
+
+</div>
+</body>
+</html>

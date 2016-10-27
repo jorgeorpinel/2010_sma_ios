@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#center { display: table;
+  position:absolute; top: 0px; left: 319px;  z-index: 1;
+  width: 340px; height: 100%;
+}
+
+#valign { display: table-cell;
+  position: relative;
+  width: 340px;
+  vertical-align: middle;
+}
+
+#contactInfo {display: table-cell;
+	position:relative;
+	top: 0px;
+	width: 340px;
+	height: 340px;
+	text-align:center;
+	vertical-align:middle;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	background-color: #FFCC33;
+	opacity:.85;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #FFF;
+	
+}
+	
+#contactInfo a {
+	color: #FFF;
+	text-decoration: none;
+
+}
+

@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#center { display: table;
+  position:absolute; top: 0px; left: 339px; z-index: 1;
+  width: 300px; height: 100%;
+
+}
+
+#valign { display: table-cell;
+  position: relative;
+  width: 300px;
+  vertical-align: middle;
+}
+
+#creditsText {
+	display: table-cell;
+	position:relative;
+	top: 0px;
+	width: 300px;
+	height: 450px;
+	text-align:center;
+	vertical-align:middle;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	
+	overflow: visible;
+	visibility: visible;
+}
+
+.books {
+	background: url('../BGs/booksBG1.jpg') no-repeat;
+}
+
+
+#wrapper {
+  position:relative; top: 0px; left: 0px;/* z-index:1;*/
+  width:300px; height: 400px;
+  overflow:hidden;
+
+}
+
+#scroller {
+  left: 0px;
+ width:210px;/* width:90%;*/
+  padding-bottom: 150px; padding-left: 40px; padding-right: 30px;
+  margin-right: auto; margin-left: auto;
+}
+
+.SMAtext {
+	line-height: 24px;
+	color: #333;
+	text-align: justify;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	
+}
+
+.SMAtext a {
+  line-height: 24px;
+  color: #333; text-align: justify;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  text-decoration:none;
+}
+
+.coloredText {
+  line-height: 24px;
+  color: #966;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+}
+/*
+#projectUI {
+	height: 78px;
+	z-index:10;
+}*/

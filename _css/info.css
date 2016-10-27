@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+#bgImage{
+  position: absolute; top: 0px; left: 0px;
+  width:700px; height: 1005px;
+  overflow: hidden;
+}
+
+#wrapper {
+  position:relative; 
+}
+
+ .profile {
+  top: 0px; left: 0px;/* z-index:1;*/
+  width:710px; height: 370px;
+  overflow:hidden;
+ }
+
+#scroller {
+  left: 0px;
+  width:90%;
+  padding-bottom: 450px; padding-left: 25px; padding-right: 35px;
+  margin-right: auto; margin-left: auto;
+}
+
+#centercontent{ display: table;
+  position:absolute; top: 100px; left: 140px;/* z-index:6;*/
+  width: 700px; height: 90%;
+  overflow: hidden;
+  padding-bottom: 100px;
+  background-color: #fff;
+}
+
+#contentValign { display: table-cell;
+  position:relative;
+  width: 700px; height: 90%;
+  text-align:center; vertical-align: middle;
+/*  margin-left: auto; margin-right: auto;*/
+  background-color: #fff;
+}
+
+#content {
+  position: relative;
+  width: 700px; height: 1005px;
+}
+
+.SMAtext {
+  line-height: 20px;
+  color: #333; text-align: justify;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+}
+.coloredText {
+  line-height: 15px;
+  color: #966;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+}

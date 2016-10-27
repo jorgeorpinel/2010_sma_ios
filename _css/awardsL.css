@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#center { display: table;
+  position:absolute; top: 0px; left: 139px; z-index: 1;
+  width: 700px; height: 100%;
+
+}
+
+#valign { display: table-cell;
+  position: relative;
+  width: 700px;
+  vertical-align: middle;
+}
+
+#infoText {
+	display: table-cell;
+	position:relative;
+	top: 0px;
+	width: 700px;
+	height: 450px;
+	text-align:center;
+	vertical-align:middle;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 23px;
+	background: url('../BGs/profileBG6.jpg') no-repeat;
+	overflow: visible;
+	visibility: visible;
+}
+
+#wrapper {
+  position:relative; top: 0px; left: 0px;/* z-index:1;*/
+  width:700px; height: 380px;
+  overflow:hidden;
+
+}
+
+#scroller {
+  left: 0px;
+ width:550px;/* width:90%;*/
+  padding-bottom: 150px; padding-left: 100px; padding-right: 35px;
+  margin-right: auto; margin-left: auto;
+}
+
+.SMAtext {
+  line-height: 24px;
+  color: #333; text-align: left;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+}
+
+.SMAtext a {
+  line-height: 24px;
+  color: #333; text-align: left;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  text-decoration:none;
+}
+
+.coloredText {
+  line-height: 24px;
+  color: #966;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+}
+/*
+#projectUI {
+	height: 78px;
+	z-index:10;
+}*/
